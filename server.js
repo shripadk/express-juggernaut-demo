@@ -34,7 +34,7 @@ app.configure('production', function(){
 app.get('/', function(req, res){
   res.render('index.jade', {
     locals: {
-        title: 'Juggernaut-Express demo'
+        title: 'Express-Juggernaut demo'
     }
   });
 });
