@@ -1,7 +1,7 @@
 Express-Juggernaut-Demo
 =============
 
-Simple demo that combines Express.js and Juggernaut 2.
+Simple demo that combines Express.js and Juggernaut 2. More or less a boilerplate app.
 
 Quick setup:
 -------
