@@ -1,0 +1,11 @@
+!!!
+html
+  head
+    title= title
+		script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js")
+		script(src="/javascripts/application.js")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+		:javascript
+		  | window.WEB_SOCKET_SWF_LOCATION = "http://localhost:3000/websocket/WebSocketMain.swf"
+		script(src="/javascripts/custom.js")
+  body!= body
