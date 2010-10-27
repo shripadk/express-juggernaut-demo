@@ -8,7 +8,7 @@ $(document).ready(function() {
   });
 	jug.on("disconnect", function() { log.append("<br />"+jug.sessionID+" disconnected.")})
 	$('form').submit(function() {
-		$.post($(this).action, $(this).serialize());
+		jug.publish($("#channelname").val(),$("#messagebody").val());
 		return false;
 	});
 });

@@ -47,8 +47,6 @@ app.get('/', function(req, res){
 app.post('/', function(req, res) {
 	var channel = req.body.channel,
 			data		= req.body.messagebody;
-			
-	publish(channel, data);
 	res.send(200);
 })
 
@@ -59,8 +57,6 @@ if (!module.parent) {
 	Juggernaut.listen(app);
 }
 
-
-	
 	Juggernaut.Connection.include({
 	  init: function(stream){
 	    this.stream     = stream;
@@ -72,7 +68,10 @@ if (!module.parent) {
 	  },
 	  onmessage: function(data){
 	    console.log("Received: " + data);
-
+			if(data.search("~j~") == 0) {
+				data = data.replace("~j~", "");
+			}
+			
 	    try {
 	      var message = Message.fromJSON(data);
 	    } catch(e) { return; }
@@ -90,6 +89,9 @@ if (!module.parent) {
 	      case "event":
 	        this.client.event(message.data);
 	      break;
+				case "publish":
+					publish(message.channel, message.data);
+				break;
 	      default:
 	        throw "Unknown type"
 	    }

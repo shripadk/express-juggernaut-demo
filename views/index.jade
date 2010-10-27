@@ -2,10 +2,10 @@ h1= title
 h4 Channel subscribed to: juggernaut-channel
 form(method="post", action="/")
 	label(for="channel-name") Channel Name:
-	input(type="text", value="", name="channel")
+	input(type="text", value="", name="channel", id="channelname")
 	br
 	label(for="message-body") Message:
-	textarea(name="messagebody")
+	textarea(name="messagebody", id="messagebody")
 	br
 	input(type="submit", name="submit", value="Post to Channel")
 div#console
