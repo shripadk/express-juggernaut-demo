@@ -4,9 +4,10 @@
 require.paths.unshift(__dirname + '/lib/support/juggernaut');
 require.paths.unshift(__dirname + '/lib/support/juggernaut-client');
 
-var express = require('express');
-var Juggernaut = require('juggernaut');
-var publish = require('juggernaut-client').publish;
+var express 				= require('express');
+var Juggernaut 			= require('juggernaut');
+var configureClient = require('juggernaut-client').configure(),
+		publish 				= require('juggernaut-client').publish;
 
 var app = module.exports = express.createServer();
 
@@ -44,6 +45,7 @@ app.post('/', function(req, res) {
 			data		= req.body.messagebody;
 			
 	publish(channel, data);
+	res.send(200);
 })
 
 // Only listen on $ node app.js
