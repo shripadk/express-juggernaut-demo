@@ -18,7 +18,7 @@ Customizing:
 
 By default the Juggernaut listens to the Express http.Server() instance. You can override this and launch Juggernaut on a separate port. Just provide the port number, eg: `Juggernaut.listen(8080)`
 
-If you want to change redis client options (publisher), you can edit `configure()` in server.js
-Just pass the options as an object literal to **configure(port, host, options)**.
+If you want to change redis client options (publisher), you can edit `configureClient()` in server.js
+Just pass the options as an object literal to **configureClient(port, host, options)**.
 
-Eg: `configure(6379, 127.0.0.1, {maxReconnectionAttempts: 10})`
+Eg: `configureClient(6379, 127.0.0.1, {maxReconnectionAttempts: 10})`
