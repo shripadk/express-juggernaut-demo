@@ -89,9 +89,9 @@ if (!module.parent) {
 	      case "event":
 	        this.client.event(message.data);
 	      break;
-				case "publish":
-					publish(message.channel, message.data);
-				break;
+	      case "publish":
+		publish(message.channel, message.data);
+	      break;
 	      default:
 	        throw "Unknown type"
 	    }
