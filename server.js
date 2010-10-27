@@ -4,10 +4,10 @@
 require.paths.unshift(__dirname + '/lib/support/juggernaut');
 require.paths.unshift(__dirname + '/lib/support/juggernaut-client');
 
-var express 				= require('express');
-var Juggernaut 			= require('juggernaut');
+var express 	    = require('express');
+var Juggernaut 	    = require('juggernaut');
 var configureClient = require('juggernaut-client').configure,
-		publish 				= require('juggernaut-client').publish;
+    publish 	    = require('juggernaut-client').publish;
 
 var app = module.exports = express.createServer();
 
@@ -48,7 +48,7 @@ app.get('/', function(req, res){
 
 app.post('/', function(req, res) {
 	var channel = req.body.channel,
-			data		= req.body.messagebody;
+	    data    = req.body.messagebody;
 			
 	publish(channel, data);
 	res.send(200);
