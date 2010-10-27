@@ -15,7 +15,7 @@ var app = module.exports = express.createServer();
 // Eg: configure(6379, 127.0.0.1, {maxReconnectionAttempts: 10});
 // If you don't pass any parameters, then it uses defaults.
 
-configure();
+configureClient();
 
 // Configuration
 
