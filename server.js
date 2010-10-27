@@ -12,6 +12,8 @@ var configureClient = require('juggernaut-client').configure,
 var app = module.exports = express.createServer();
 
 // Configure your Redis client here!
+// Eg: configure(6379, 127.0.0.1, {maxReconnectionAttempts: 10});
+// If you don't pass any parameters, then it uses defaults.
 
 configure();
 
@@ -57,5 +59,5 @@ app.post('/', function(req, res) {
 if (!module.parent) {
   app.listen(3000);
   console.log("Express server listening on port %d", app.address().port)
-	Juggernaut.listen(app);
+  Juggernaut.listen(app);
 }
