@@ -6,10 +6,14 @@ require.paths.unshift(__dirname + '/lib/support/juggernaut-client');
 
 var express 				= require('express');
 var Juggernaut 			= require('juggernaut');
-var configureClient = require('juggernaut-client').configure(),
+var configureClient = require('juggernaut-client').configure,
 		publish 				= require('juggernaut-client').publish;
 
 var app = module.exports = express.createServer();
+
+// Configure your Redis client here!
+
+configure();
 
 // Configuration
 
