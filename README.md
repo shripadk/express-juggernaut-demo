@@ -9,7 +9,7 @@ Quick setup:
 * Step 2: Install node-static -- `npm install http://github.com/cloudhead/node-static/tarball/master`
 * Step 3: Install redis-client -- `npm install http://github.com/technoweenie/redis-node-client/tarball/npm`
 * Step 4: Install Redis -- [Redis](http://code.google.com/p/redis/)
-* Step 5: Clone the repo -- `git clone git://github.com/shripadk/express-juggernaut.git`
+* Step 5: Clone the repo -- `git clone git://github.com/shripadk/express-juggernaut-demo.git`
 * Step 6: cd into the directory and launch server.js -- `$ sudo node server.js`
 * Step 7: No step 7! You have got your express-juggernaut app running! Yay!
 
