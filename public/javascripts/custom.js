@@ -2,7 +2,7 @@ $(document).ready(function() {
 	var jug = new Juggernaut({port: 3000});
 	var log = $('#console');
 	console.log(jug);
-  jug.on("connect", function(){ log.append("<br />"+jug.sessionID+" connected") });
+  jug.on("connect", function(){jug.publish("juggernaut-channel", "<br />"+jug.sessionID+" connected")});
   jug.subscribe("juggernaut-channel", function(data){
     log.append("<br />Got data: " + data);
   });

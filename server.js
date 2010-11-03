@@ -78,26 +78,28 @@ if (!module.parent) {
 
 	    switch (message.type){
 	      case "subscribe":
+					this.client.channel = message.channel;
 	        this.client.subscribe(message.getChannel());
 	      break;
 	      case "unsubscribe":
 	        this.client.unsubscribe(message.getChannel());
 	      break;
+				case "publish":
+					publish(message.channel, message.data, this.client.session_id);
+				break;
 	      case "meta":
 	        this.client.setMeta(message.data);
 	      break;
 	      case "event":
 	        this.client.event(message.data);
 	      break;
-				case "publish":
-					publish(message.channel, message.data);
-				break;
 	      default:
 	        throw "Unknown type"
 	    }
 	  },
 
 	  ondisconnect: function(){
+			this.client.unsubscribe(this.client.channel);
 	    this.client.disconnect();
 	  },
 
